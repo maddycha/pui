@@ -45,16 +45,12 @@ img{
     width: 100%;
 }
 
-#float{
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-    z-index: 10;
-    position: absolute;
-    top: 30%;
-    margin-left: 2%;
-    width: 40%;
+#introtext{
+    width: 80%;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    margin-bottom: 2rem;
 }
-
 
 .itemlisting{
     box-sizing: border-box;
