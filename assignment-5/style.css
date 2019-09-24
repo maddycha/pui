@@ -1,0 +1,28 @@
+html{
+font-family: 'Be Vietnam', sans-serif;
+    margin: 6%;
+}
+
+nav a:first-of-type{
+    float: left;
+    font-weight: bold;
+}
+
+nav a{
+    float: right;
+    padding: 2%;
+}
+
+a{
+    text-decoration: none;
+    color: #0000ff;
+}
+
+#homeimg{
+    width: 100%;
+}
+
+p{
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
