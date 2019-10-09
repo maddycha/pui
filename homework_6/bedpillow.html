@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fluff stuff</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <!--logo & links-->
+            <!--navigation (same on every page)-->
+            <nav>
+                <a href="index.html">fluff stuff</a>
+                <a href="cart.html">&#128722;<span id="cartNumber"></span></a>
+                <a href="contact.html">contact</a>
+                <a href="products.html" class="currentpage">products</a> 
+                <a href="index.html">home</a>
+            </nav>
+        </header>
+        <main>
+            <!--left col w/ main img and dimensions info-->
+            <div class="leftcol">
+                <img src="img/2.jpg" alt="pillow">
+                <br><br>
+                <h2>Dimensions:</h2>
+                <br><br>
+                <p>Length: 20"
+                    <br>
+                    Width: 26"<br>
+                    Filling weight: 13 oz<br>
+                    Total weight: 14 oz</p>
+                <br><br><br><br>
+            </div>
+            <!--right col w/ name, price, purchasing decisions-->
+            <div class="rightcol">
+                <h5>Bed Pillow</h5>
+                <h6>$19.99</h6>
+                <br><br>
+                <p>This is the best bed pillow money could buy! May be completed with a pillow protector, which protects the pillow from stains and dirt.</p>
+                <br><br>
+                <h2>Yarn:</h2>
+                <br>
+                <div class="yarncolors" onclick="allowAdd(); yarnChoice();">
+                    <span class="dot" id="yarn1" onclick="yarn1()"></span> <span class="dot" id="yarn2" onclick="yarn2()"></span> <span class="dot" id="yarn3" onclick="yarn3()"></span> <span class="dot" id="yarn4" onclick="yarn4()"></span>
+                </div>
+                <br><br>
+                <br>
+                <h2>Material:</h2>
+                <br><br>
+                <div class="selectmenu">
+                    <select id="materialChoice">
+                        <option value="1" selected>duck-down</option>
+                        <option value="2">hypoallergenic poly-blend</option>
+                        <option value="3">memory foam</option>
+                    </select>
+                    <br><br><br><br>
+
+                    <button id="addCart" onclick="addCart()">add to cart</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="separator"></div>
+            <p>&copy; Fluff Stuff 2019</p>
+        </footer>
+    </body>
+</html>
