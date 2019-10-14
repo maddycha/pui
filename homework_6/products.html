@@ -8,13 +8,14 @@
         <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap" rel="stylesheet">
         <script type="text/javascript" src="script.js"></script>
     </head>
-    <body>
+    <body onload=calculateCart()>
         <header>
             <!--logo & links-->
             <!--navigation (same on every page)-->
             <nav>
                 <a href="index.html">fluff stuff</a>
-                <a href="cart.html">&#128722;</a>
+                <a href="cart.html">&#128722;<span id="cartNumber"></span></a>
+                <a href="wishlist.html">wishlist</a>
                 <a href="contact.html">contact</a>
                 <a href="products.html" class="currentpage">products</a> 
                 <a href="index.html">home</a>

@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap" rel="stylesheet">
         <script type="text/javascript" src="script.js"></script>
     </head>
-    <body>
+    <body onload="populateCart()">
 
         <header>
             <!--logo & links-->
@@ -16,25 +16,23 @@
             <nav>
                 <a href="index.html">fluff stuff</a>
                 <a href="cart.html">&#128722;<span id="cartNumber"></span></a>
+                                <a href="wishlist.html">wishlist</a>
+
                 <a href="contact.html">contact</a>
                 <a href="products.html">products</a> 
-                <a href="index.html" class="currentpage">home</a>
+                <a href="index.html">home</a>
             </nav>
         </header>
         <main>
-
-            <div class="cartitem" onclick="test()">
-                <img class="cartimg" src="img/2.jpg">
-                <p id="itemtype1">type</p>
-                <p id="itemprice1">price:</p>
-                <br><br><br><br><br><br>
-                <p id="itemyarn1">yarn: <span class="dot"></span> </p>
-                <p id="itemmaterial1">material: </p>
+           <h4>Cart</h4>
+            <div><span id="cart"></span>
+               
+                <div class="separator"></div>
             </div>
-            
-            <div class="separator"></div>
-            
-            <p id="priceadd"></p>
+            <div id="priceSection">
+            <h2 id="priceName">Price</h2>
+            <p id="priceAdd">total price: <span id="price"></span></p>
+            </div>
 
         </main>
         <footer>

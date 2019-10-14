@@ -8,13 +8,14 @@
         <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap" rel="stylesheet">
         <script type="text/javascript" src="script.js"></script>
     </head>
-    <body>
+    <body onload=calculateCart()>
         <header>
             <!--logo & links-->
             <!--navigation (same on every page)-->
             <nav>
                 <a href="index.html">fluff stuff</a>
                 <a href="cart.html">&#128722;<span id="cartNumber"></span></a>
+                <a href="wishlist.html">wishlist</a>
                 <a href="contact.html">contact</a>
                 <a href="products.html" class="currentpage">products</a> 
                 <a href="index.html">home</a>
@@ -44,7 +45,7 @@
                 <h2>Yarn:</h2>
                 <br>
                 <div class="yarncolors" onclick="allowAdd(); yarnChoice();">
-                    <span class="dot" id="yarn1" onclick="yarn1()"></span> <span class="dot" id="yarn2" onclick="yarn2()"></span> <span class="dot" id="yarn3" onclick="yarn3()"></span> <span class="dot" id="yarn4" onclick="yarn4()"></span>
+                    <span class="dot" id="red" onclick="yarn1()"></span> <span class="dot" id="yellow" onclick="yarn2()"></span> <span class="dot" id="blue" onclick="yarn3()"></span> <span class="dot" id="gray" onclick="yarn4()"></span>
                 </div>
                 <br><br>
                 <br>
@@ -58,7 +59,7 @@
                     </select>
                     <br><br><br><br>
 
-                    <button id="addCart" onclick="addCart()">add to cart</button>
+                    <button id="addCart" onclick="addCart()">add to cart</button> <button id="addWishlist" onclick="addWishlist()">&#9829;</button>
                 </div>
             </div>
         </main>
