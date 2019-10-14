@@ -75,13 +75,11 @@ function allowAdd(){
 //updates pillowChoice class with final yarn color and material choice
 function addCart(){
     var cart = JSON.parse(localStorage.getItem("cart"));
-    console.log(cart);
     var cartNum = cart.length+1;
     //for loop checks which material has been selected and updates object based on choice
     for(var i=1; i <= 3; i++){
         if(document.getElementById("materialChoice").value == i){
             pillowChoice.material = i-1;
-            console.log(pillowChoice.material);
         }
     }
 
@@ -196,7 +194,6 @@ function calculateCart(){
     document.getElementById("cartNumber").innerHTML = JSON.parse(localStorage.getItem("cartLength"));
 
 }
-
 
 
 function addWishlist(){
