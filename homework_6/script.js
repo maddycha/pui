@@ -6,6 +6,13 @@ var cart = [];
 var wishlist = [];
 var materialChoices = ["duck-down", "hypoallergenic poly-blend", "memory foam"];
 
+function resetCart(){
+    var cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log(cart);
+    console.log(localStorage.getItem("cart"));
+}
+
 //declares object for pillowchoice allowing it to store yarn and material information
 function pillowChoice(yarn,material){ 
     this.yarn = yarn;
@@ -191,8 +198,15 @@ function calculateCart(){
     var cart = JSON.parse(localStorage.getItem("cart"));
     //re-styles cart number and populates innerhtml based on length of cart array
     document.getElementById("cartNumber").style.display = "inline-block";
-    document.getElementById("cartNumber").innerHTML = JSON.parse(localStorage.getItem("cartLength"));
+    localStorage.setItem("cart", JSON.stringify(cart));
 
+    if(cart.length == 0){
+        document.getElementById("cartNumber").innerHTML = "0";
+    }
+    else{
+        document.getElementById("cartNumber").innerHTML = JSON.parse(localStorage.getItem("cartLength"));
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
 }
 
 
