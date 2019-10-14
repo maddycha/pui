@@ -1,5 +1,8 @@
 //declaring number of items in cart and cart array
 var cartNum = 0;
+
+//will not add to cart unless yarn and material have been declared
+var allowAddB = false;
 var cart = [];
 var wishlist = [];
 var materialChoices = ["duck-down", "hypoallergenic poly-blend", "memory foam"];
@@ -58,15 +61,22 @@ function allowAdd(){
     if (typeof pillowChoice.yarn !== 'undefined' && typeof pillowChoice.material !=='undefined'){
         document.getElementById("addCart").style.background = "#0000ff";
         document.getElementById("addWishlist").style.background = "#0000ff";
-                document.getElementById("addCart").style.cursor = "pointer";
+        document.getElementById("addCart").style.cursor = "pointer";
         document.getElementById("addWishlist").style.cursor = "pointer";
+        allowAddB = true;
     }
+    else{
+        allowAddB = false;
+    }
+
+    console.log(allowAddB);
 }
 
 
 //updates pillowChoice class with final yarn color and material choice
 function addCart(){
     var cart = JSON.parse(localStorage.getItem("cart"));
+    var cartNum = cart.length+1;
     //for loop checks which material has been selected and updates object based on choice
     for(var i=1; i <= 3; i++){
         if(document.getElementById("materialChoice").value == i){
@@ -74,18 +84,16 @@ function addCart(){
             console.log(pillowChoice.material);
         }
     }
-    console.log("added: " + pillowChoice.yarn + " , " +pillowChoice.material)
-    //adds to number of items in cart and updates visually
-    cartNum++;
-    document.getElementById("cartNumber").style.display="inline-block";
-    document.getElementById("cartNumber").innerHTML = cartNum;
 
     //adds new pillowchoice to cart array
-    cart.push([pillowChoice.yarn, pillowChoice.material]);
-
-    //console log all items in cart array
-    for(var i=0; i<cart.length; i++){
-        console.log(cart[i]);
+    if(allowAddB ==true){
+        cart.push([pillowChoice.yarn, pillowChoice.material]);
+        //adds to number of items in cart and updates visually
+        document.getElementById("cartNumber").style.display="inline-block";
+        document.getElementById("cartNumber").innerHTML = cartNum;
+    }
+    else{
+        cartNum = 0;
     }
 
     //stores cart and length to localstorage
@@ -198,7 +206,7 @@ function addWishlist(){
             console.log(pillowChoice.material);
         }
     }
-    
+
     //adds new yarn and material to wishlist item
     wishlist.push([pillowChoice.yarn, pillowChoice.material]);
 
@@ -210,29 +218,29 @@ function addWishlist(){
 
 function populateWishlist(){
     var wishlist = JSON.parse(localStorage.getItem("wishlist"));
-     document.getElementById("wishlist").innerHTML = ""; 
-    
+    document.getElementById("wishlist").innerHTML = ""; 
+
     for(var i=0; i<wishlist.length; i++){
         var itemImg = document.createElement("img");
         itemImg.setAttribute("src", "img/2.jpg");
         itemImg.setAttribute("class", "cartimg");
-        
+
         var pillowString = document.createElement("p");
         var pillowNode = document.createTextNode("bed pillow");
         pillowString.appendChild(pillowNode);
         pillowString.setAttribute("class", "pillowType");
-        
+
         var yarnString = document.createElement("p");
         var yarnNode = document.createTextNode("yarn: "+wishlist[i][0]);
         yarnString.appendChild(yarnNode);
         yarnString.setAttribute("id", "yarn"+i);
-        
-                var materialString = document.createElement("p");
+
+        var materialString = document.createElement("p");
         var materialNode = document.createTextNode("material: "+materialChoices[wishlist[i][1]]);
         materialString.appendChild(materialNode);
         materialString.setAttribute("id", "material"+i);
         materialString.setAttribute("class", "materialType");
-        
+
         var item = document.getElementById("cart");
         var item = document.createElement("div");
         item.appendChild(itemImg);
