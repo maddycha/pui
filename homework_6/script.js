@@ -1,6 +1,5 @@
 //declaring number of items in cart and cart array
 var cartNum = 0;
-
 //will not add to cart unless yarn and material have been declared
 var allowAddB = false;
 var cart = [];
@@ -86,11 +85,12 @@ function addCart(){
     }
 
     //adds new pillowchoice to cart array
-    if(allowAddB ==true){
+    if(allowAddB == true){
         cart.push([pillowChoice.yarn, pillowChoice.material]);
         //adds to number of items in cart and updates visually
         document.getElementById("cartNumber").style.display="inline-block";
         document.getElementById("cartNumber").innerHTML = cartNum;
+        console.log(cart);
     }
     else{
         cartNum = 0;
