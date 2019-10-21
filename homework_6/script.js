@@ -6,6 +6,33 @@ var cart = [];
 var wishlist = [];
 var materialChoices = ["duck-down", "hypoallergenic poly-blend", "memory foam"];
 
+var similarItems = [{img: "img/3.jpg", type: "Couch Pillow", price: "$24.99"}, {img: "img/4.jpg", type: "Decorative Pillow", price: "$8.99"}, {img: "img/5.jpg", type: "Casual Pillow", price: "$14.99"}, {img: "img/2.jpg", type: "Bed Pillow", price: "$19.99"}, {img: "img/3.jpg", type: "Couch Pillow", price: "$24.99"}, {img: "img/4.jpg", type: "Decorative Pillow", price: "$8.99"}, {img: "img/5.jpg", type: "Casual Pillow", price: "$14.99"}, {img: "img/2.jpg", type: "Bed Pillow", price: "$19.99"}];
+
+
+function similarItemsList(){
+    document.getElementById("carousel").innerHTML = ""; 
+    for (var i = 0; i < similarItems.length; i++){
+        var carouselItem = document.createElement("div");
+        carouselItem.setAttribute("class", "carouselitem");
+        var carouselImg = document.createElement("img");
+        carouselImg.setAttribute("src", similarItems[i].img);
+        var carouselType = document.createElement("h2");
+        var carouselTypeText = document.createTextNode(similarItems[i].type);
+        carouselType.appendChild(carouselTypeText);
+        carouselType.setAttribute("class", "itemname");
+        var carouselPrice = document.createElement("h3");
+        var carouselPriceText = document.createTextNode(similarItems[i].price);
+        carouselPrice.setAttribute("class", "price");
+        carouselPrice.appendChild(carouselPriceText);
+        carouselItem.appendChild(carouselImg);
+        carouselItem.appendChild(carouselType);
+        carouselItem.appendChild(carouselPrice);
+        var carouselList = document.getElementById("carousel");
+        carouselList.appendChild(carouselItem);
+    }
+}
+
+
 function resetCart(){
     var cart = [];
     var wishlist = [];
@@ -266,4 +293,16 @@ function populateWishlist(){
         var itemList = document.getElementById("wishlist");
         itemList.appendChild(item);
     }
+}
+
+function leftcarousel(){
+    var e = similarItems[5];
+    similarItems.splice(similarItems.length-1, 1);
+    similarItems.unshift(e);
+    similarItemsList();
+}
+
+function rightcarousel(){
+    similarItems.push(similarItems.shift());
+    similarItemsList();
 }

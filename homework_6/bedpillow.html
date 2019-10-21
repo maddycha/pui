@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap" rel="stylesheet">
         <script type="text/javascript" src="script.js"></script>
     </head>
-    <body onload="calculateCart()">
+    <body onload="calculateCart(); similarItemsList();">
         <header>
             <!--logo & links-->
             <!--navigation (same on every page)-->
@@ -61,6 +61,17 @@
 
                     <button id="addCart" onclick="addCart()">add to cart</button> <button id="addWishlist" onclick="addWishlist()">&#9829;</button>
                 </div>
+            </div>
+            <div class="separator"></div>
+            <div id="similarproducts">
+                <br><br>
+                <h4>Similar Products</h4>
+                <div id="carousel">
+                    <div id="carouselcontent">
+                    </div>
+                </div>
+                <button id="left" class="carouselbutton" onclick="leftcarousel()">&#10094;</button>
+                <button id="right" class="carouselbutton" onclick="rightcarousel()">&#10095;</button>
             </div>
         </main>
         <footer>
