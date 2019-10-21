@@ -8,7 +8,8 @@ var materialChoices = ["duck-down", "hypoallergenic poly-blend", "memory foam"];
 
 var similarItems = [{img: "img/3.jpg", type: "Couch Pillow", price: "$24.99"}, {img: "img/4.jpg", type: "Decorative Pillow", price: "$8.99"}, {img: "img/5.jpg", type: "Casual Pillow", price: "$14.99"}, {img: "img/2.jpg", type: "Bed Pillow", price: "$19.99"}, {img: "img/3.jpg", type: "Couch Pillow", price: "$24.99"}, {img: "img/4.jpg", type: "Decorative Pillow", price: "$8.99"}, {img: "img/5.jpg", type: "Casual Pillow", price: "$14.99"}, {img: "img/2.jpg", type: "Bed Pillow", price: "$19.99"}];
 
-
+//generates content in html file for the carousel
+//img for image, h2 for type of bed pillow, h3 for price
 function similarItemsList(){
     document.getElementById("carousel").innerHTML = ""; 
     for (var i = 0; i < similarItems.length; i++){
@@ -32,7 +33,7 @@ function similarItemsList(){
     }
 }
 
-
+//resets cart on index page
 function resetCart(){
     var cart = [];
     var wishlist = [];
@@ -47,11 +48,6 @@ function pillowChoice(yarn,material){
     this.yarn = yarn;
     this.material = material;
 }
-
-//for(var i=0; i<4; i++){
-//    cart[i] = new pillowChoice("yarn-" + i, "material-" + i);
-//}
-
 
 //default as duck-down is the first option in select
 pillowChoice.material ="1";
@@ -295,13 +291,16 @@ function populateWishlist(){
     }
 }
 
+
+//left button of carousel takes the last item of the array and moves it to the front
 function leftcarousel(){
-    var e = similarItems[5];
+    var e = similarItems[7];
     similarItems.splice(similarItems.length-1, 1);
     similarItems.unshift(e);
     similarItemsList();
 }
 
+//right button of carousel takes the first item of the array and moves it to the end
 function rightcarousel(){
     similarItems.push(similarItems.shift());
     similarItemsList();
