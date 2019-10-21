@@ -8,7 +8,9 @@ var materialChoices = ["duck-down", "hypoallergenic poly-blend", "memory foam"];
 
 function resetCart(){
     var cart = [];
+    var wishlist = [];
     localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
     console.log(cart);
     console.log(localStorage.getItem("cart"));
 }
